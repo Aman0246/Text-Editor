@@ -68,7 +68,7 @@ export default function Abouut() {
             </div>
           </div>
         </div>
-        <button type="button"  value="" onClick={toggleStyle} className="btn btn-dark my-3">{btn} </button>
+        <button type="button"  value="" onClick={toggleStyle} className="btn btn-dark my-3">{btn} </button>2
       </div>
     </>
   )
