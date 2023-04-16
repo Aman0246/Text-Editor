@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import PropTypes from "prop-types";
 
-export default function Textarea() {
+export default function Textarea(props) {
   const handleUpclick = () => {
     updateText(text.toUpperCase());
   };
@@ -53,22 +53,24 @@ export default function Textarea() {
   const [tex, updateTex] = useState("Dark Mode");
   return (
     <>
-      <div style={light}>
-        <div className="my-3">
+      <div style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>
+        <div className="my-3" style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>
           <h1>Enter your text below </h1>
 
           <textarea
+          style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}
+
             value={text}
-            style={light}
-          
+            // style={light}
             onChange={handleonchange}
             className="form-control"
             id="exampleFormControlTextarea1"
             rows="8"
           ></textarea>
         </div>
+        <div >
         <button
-          style={light}
+          style={{color:props.setlight==='light'?"blue":"white", backgroundColor:props.setlight==="light"?"white":"blue"}}
           type="button"
           className="btn btn-primary"
           onClick={handleUpclick}
@@ -76,7 +78,7 @@ export default function Textarea() {
           Convert to Uppercase{" "}
         </button>
         <button
-          style={light}
+          style={{color:props.setlight==='light'?"blue":"white", backgroundColor:props.setlight==="light"?"white":"blue"}}
           type="button"
           className="btn btn-primary mx-3"
           onClick={handleLoclick}
@@ -84,7 +86,7 @@ export default function Textarea() {
           Convert to Lowercase
         </button>
         <button
-          style={light}
+           style={{color:props.setlight==='light'?"blue":"white", backgroundColor:props.setlight==="light"?"white":"blue"}}
           type="button"
           className="btn btn-primary "
           onClick={Reset}
@@ -92,7 +94,7 @@ export default function Textarea() {
           Reset
         </button>
         <button
-          style={light}
+            style={{color:props.setlight==='light'?"blue":"white", backgroundColor:props.setlight==="light"?"white":"blue"}}
           type="button"
           className="btn btn-primary mx-3"
           onClick={Copy}
@@ -100,28 +102,24 @@ export default function Textarea() {
           Copy
         </button>
         <button
-          style={light}
+             style={{color:props.setlight==='light'?"blue":"white", backgroundColor:props.setlight==="light"?"white":"blue"}}
           type="button"
           className="btn btn-primary mx-3"
           onClick={RemoveSpace}
         >
           Remove_Space
         </button>
-        <button
-          style={light}
-          type="button"
-          className="btn btn-primary mx-3"
-          onClick={dark}
-        >
-          {tex}
-        </button>
-        <h2 className="my-2">Your text summary </h2>
+      </div>
+          
+    
+        <div style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>
+        <h2 style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}} className="my-2">Your text summary </h2>
 
-        <p>
+        <p style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>
           {text.split(" ").length} words {text.length} Characters
-        </p>
-        <h2>Preview</h2>
-        <p>{text}</p>
+        </p></div>
+        <h2 style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>Preview</h2>
+        <p style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>{text}</p>
       </div>
     </>
   );

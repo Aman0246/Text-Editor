@@ -10,9 +10,9 @@ function App() {
   
   const toogleMode =() =>{
     console.log("clicked")
-    if(setlight=='light'){
+    if(setlight==='light'){
       setdark('dark')
-      document.body.style.backgroundColor="gray"
+      document.body.style.backgroundColor="#060620"
     }
     else{
       setdark('light')

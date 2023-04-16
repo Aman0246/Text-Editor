@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import PropTypes from "prop-types";
 
-export default function Abouut() {
+export default function Abouut(props) {
   const [mystyle, setStyle] = useState({
     color: "black",
     background: "white",
@@ -26,14 +26,14 @@ export default function Abouut() {
   const [btn, newbtn] = useState("Dark Mode");
   return (
     <>
-      <div className="container" style={mystyle}>
+      <div className="container"    style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>
         <h1>About us</h1>
         <div className="accordion" id="accordionExample">
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
                 className="accordion-button "
-                style={mystyle}
+                   style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseOne"
@@ -48,7 +48,7 @@ export default function Abouut() {
               className="accordion-collapse collapse show"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={mystyle}>
+              <div className="accordion-body"    style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>
                 <strong>This is the first item's accordion body.</strong> It is
                 shown by default, until the collapse plugin adds the appropriate
                 classes that we use to style each element. These classes control
@@ -64,7 +64,7 @@ export default function Abouut() {
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
-                style={mystyle}
+                   style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}
                 className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
@@ -80,7 +80,7 @@ export default function Abouut() {
               className="accordion-collapse collapse"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={mystyle}>
+              <div className="accordion-body"    style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>
                 <strong>This is the second item's accordion body.</strong> It is
                 hidden by default, until the collapse plugin adds the
                 appropriate classes that we use to style each element. These
@@ -96,7 +96,7 @@ export default function Abouut() {
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
-                style={mystyle}
+                   style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}
                 className="accordion-button collapsed"
                 type="button"
                 data-bs-toggle="collapse"
@@ -112,7 +112,7 @@ export default function Abouut() {
               className="accordion-collapse collapse"
               data-bs-parent="#accordionExample"
             >
-              <div className="accordion-body" style={mystyle}>
+              <div className="accordion-body"    style={{color:props.setlight==='light'?"black":"white", backgroundColor:props.setlight==="light"?"white":"black"}}>
                 <strong>This is the third item's accordion body.</strong> It is
                 hidden by default, until the collapse plugin adds the
                 appropriate classes that we use to style each element. These
@@ -126,14 +126,7 @@ export default function Abouut() {
             </div>
           </div>
         </div>
-        <button
-          type="button"
-          value=""
-          onClick={toggleStyle}
-          className="btn btn-dark my-3"
-        >
-          {btn}{" "}
-        </button>
+      
       </div>
     </>
   );

@@ -37,7 +37,7 @@ export default function Navbar(props) {
                 id="flexSwitchCheckDefault"
               />
               <label className={`form-check-label text-${props.setlight==='light'?'dark':'light'} mx-2`} >
-               Darkmode on
+               Mode Change
               </label>
             </div>
             <form className="d-flex" role="search">
